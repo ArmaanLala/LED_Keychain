@@ -12,3 +12,7 @@ sparkfun.com/products/10866
 
 Keyboard switch
 https://kbdfans.com/collections/kailh-switches/products/novelkeys-x-kailh-box-thick-clicks-navy-jade
+
+
+## Credits
+This Eagle project is a personal collaboration project between Armaan Lala and Peter Chu.
