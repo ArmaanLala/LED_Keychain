@@ -188,6 +188,22 @@
 </package>
 </packages>
 </library>
+<library name="LED_Keychain_lib">
+<packages>
+<package name="KEYSTONE3035">
+<smd name="NEG" x="0" y="0" dx="10.16" dy="10.16" layer="1"/>
+<pad name="VCC1" x="-10.795" y="0" drill="2.032"/>
+<pad name="VCC2" x="10.795" y="0" drill="2.032"/>
+<wire x1="-13.97" y1="-8.89" x2="13.97" y2="-8.89" width="0.127" layer="21"/>
+<wire x1="13.97" y1="-8.89" x2="13.97" y2="8.89" width="0.127" layer="21"/>
+<wire x1="13.97" y1="8.89" x2="-13.97" y2="8.89" width="0.127" layer="21"/>
+<wire x1="-13.97" y1="8.89" x2="-13.97" y2="-8.89" width="0.127" layer="21"/>
+<text x="-11.43" y="6.35" size="1.27" layer="21">Battery inserts from this side</text>
+<circle x="-16.51" y="6.35" radius="1.27" width="0.508" layer="21"/>
+<text x="-10.16" y="10.16" size="3.81" layer="25">&gt;NAME</text>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -384,6 +400,9 @@ design rules under a new name.</description>
 <element name="U$2" library="Keyboard" package="MX-1U" value="KEYSWITCH-PLAIN-MX-1U" x="7.62" y="-22.86" smashed="yes">
 <attribute name="NAME" x="7.62" y="-25.66" size="1" layer="21" font="vector" ratio="13" align="center"/>
 <attribute name="NAME" x="7.62" y="-25.66" size="1" layer="22" font="vector" ratio="13" rot="MR0" align="center"/>
+</element>
+<element name="U$1" library="LED_Keychain_lib" package="KEYSTONE3035" value="KEYSTONE3035" x="52.07" y="13.97" smashed="yes">
+<attribute name="NAME" x="63.5" y="31.75" size="3.81" layer="25"/>
 </element>
 </elements>
 <signals>

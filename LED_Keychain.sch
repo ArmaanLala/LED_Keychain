@@ -9575,6 +9575,53 @@
 </deviceset>
 </devicesets>
 </library>
+<library name="LED_Keychain_lib">
+<packages>
+<package name="KEYSTONE3035">
+<smd name="NEG" x="0" y="0" dx="10.16" dy="10.16" layer="1"/>
+<pad name="VCC1" x="-10.795" y="0" drill="2.032"/>
+<pad name="VCC2" x="10.795" y="0" drill="2.032"/>
+<wire x1="-13.97" y1="-8.89" x2="13.97" y2="-8.89" width="0.127" layer="21"/>
+<wire x1="13.97" y1="-8.89" x2="13.97" y2="8.89" width="0.127" layer="21"/>
+<wire x1="13.97" y1="8.89" x2="-13.97" y2="8.89" width="0.127" layer="21"/>
+<wire x1="-13.97" y1="8.89" x2="-13.97" y2="-8.89" width="0.127" layer="21"/>
+<text x="-11.43" y="6.35" size="1.27" layer="21">Battery inserts from this side</text>
+<circle x="-16.51" y="6.35" radius="1.27" width="0.508" layer="21"/>
+<text x="-10.16" y="10.16" size="3.81" layer="25">&gt;NAME</text>
+</package>
+</packages>
+<symbols>
+<symbol name="KEYSTONE3035">
+<wire x1="7.62" y1="7.62" x2="7.62" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-7.62" x2="-7.62" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-7.62" x2="-7.62" y2="7.62" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="7.62" x2="7.62" y2="7.62" width="0.254" layer="94"/>
+<pin name="VCC1" x="-5.08" y="10.16" length="short" rot="R270"/>
+<pin name="VCC2" x="5.08" y="10.16" length="short" rot="R270"/>
+<pin name="NEG" x="0" y="-10.16" length="short" rot="R90"/>
+<text x="10.16" y="7.62" size="1.778" layer="95">&gt;NAME</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="KEYSTONE3035">
+<gates>
+<gate name="G$1" symbol="KEYSTONE3035" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="KEYSTONE3035">
+<connects>
+<connect gate="G$1" pin="NEG" pad="NEG"/>
+<connect gate="G$1" pin="VCC1" pad="VCC1"/>
+<connect gate="G$1" pin="VCC2" pad="VCC2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -9587,6 +9634,7 @@
 <parts>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="FRAME_A_L" device=""/>
 <part name="U$2" library="Keyboard" deviceset="KEYSWITCH-PLAIN" device="-MX-1U"/>
+<part name="U$1" library="LED_Keychain_lib" deviceset="KEYSTONE3035" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -9601,6 +9649,9 @@
 </instance>
 <instance part="U$2" gate="G$1" x="66.04" y="111.76" smashed="yes">
 <attribute name="NAME" x="59.23" y="117.078" size="1" layer="95"/>
+</instance>
+<instance part="U$1" gate="G$1" x="91.44" y="111.76" smashed="yes">
+<attribute name="NAME" x="101.6" y="119.38" size="1.778" layer="95"/>
 </instance>
 </instances>
 <busses>
