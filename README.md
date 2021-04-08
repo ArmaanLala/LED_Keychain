@@ -2,6 +2,8 @@
 
 Press a button to active a few SMD leds
 
+rev# marks an existing PCB that has been ordered and purchased. After a rev# is submitted and purchased that revision will not be edited anymore and the next revision will be started. The current revision is rev2
+
 #### Important links
 
 Battery Holder
@@ -16,13 +18,13 @@ https://kbdfans.com/collections/kailh-switches/products/novelkeys-x-kailh-box-th
 ## Schematic and Board layout
 
 Schematic view
-![Schematic View](https://github.com/ArmaanLala/LED_Keychain/blob/master/Images/schematicView.png?raw=true)
+![Schematic View rev1](https://github.com/ArmaanLala/LED_Keychain/blob/master/Images/schematicView.png?raw=true)
 
 Layout view
-![Layout View](https://github.com/ArmaanLala/LED_Keychain/blob/master/Images/layoutView.png?raw=true)
+![Layout View rev1](https://github.com/ArmaanLala/LED_Keychain/blob/master/Images/layoutView.png?raw=true)
 
 Board view
-![Board View](https://github.com/ArmaanLala/LED_Keychain/blob/master/Images/LED_Keychain.png?raw=true)
+![Board View rev1](https://github.com/ArmaanLala/LED_Keychain/blob/master/Images/LED_Keychain.png?raw=true)
 
 ## Credits
 
