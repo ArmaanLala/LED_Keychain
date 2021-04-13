@@ -85,6 +85,12 @@
 <circle x="-16.51" y="6.35" radius="1.27" width="0.508" layer="21"/>
 <text x="-10.16" y="10.16" size="3.81" layer="25">&gt;NAME</text>
 </package>
+<package name="KINGBRIGHT-0603">
+<smd name="CATHODE" x="-0.645" y="0" dx="1.05" dy="0.5" layer="1"/>
+<smd name="ANODE" x="0.47" y="0" dx="0.7" dy="0.5" layer="1" rot="R180"/>
+<circle x="-1.5" y="0.5" radius="0.1" width="0.2" layer="21"/>
+<text x="-2" y="1" size="1.27" layer="25">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="KEYSTONE3035">
@@ -96,6 +102,28 @@
 <pin name="VCC2" x="5.08" y="10.16" length="short" rot="R270"/>
 <pin name="NEG" x="0" y="-10.16" length="short" rot="R90"/>
 <text x="10.16" y="7.62" size="1.778" layer="95">&gt;NAME</text>
+</symbol>
+<symbol name="LED-PAD">
+<wire x1="1.27" y1="0" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="-1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="-1.27" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="-1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="-2.286" y1="-1.016" x2="-3.175" y2="-1.905" width="0.1524" layer="94"/>
+<wire x1="-1.524" y1="-1.778" x2="-2.413" y2="-2.667" width="0.1524" layer="94"/>
+<text x="3.556" y="-4.572" size="1.778" layer="95" rot="R90">&gt;NAME</text>
+<pin name="CATHODE" x="0" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
+<pin name="ANODE" x="0" y="2.54" visible="pad" length="short" direction="pas" rot="R270"/>
+<polygon width="0.1524" layer="94">
+<vertex x="-3.302" y="-1.524"/>
+<vertex x="-3.556" y="-2.286"/>
+<vertex x="-2.794" y="-2.032"/>
+</polygon>
+<polygon width="0.1524" layer="94">
+<vertex x="-2.54" y="-2.286"/>
+<vertex x="-2.794" y="-3.048"/>
+<vertex x="-2.032" y="-2.794"/>
+</polygon>
 </symbol>
 </symbols>
 <devicesets>
@@ -109,6 +137,22 @@
 <connect gate="G$1" pin="NEG" pad="NEG"/>
 <connect gate="G$1" pin="VCC1" pad="VCC1"/>
 <connect gate="G$1" pin="VCC2" pad="VCC2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="KINGBRIGHT-A1608">
+<gates>
+<gate name="G$1" symbol="LED-PAD" x="7.62" y="-2.54"/>
+</gates>
+<devices>
+<device name="" package="KINGBRIGHT-0603">
+<connects>
+<connect gate="G$1" pin="ANODE" pad="ANODE"/>
+<connect gate="G$1" pin="CATHODE" pad="CATHODE"/>
 </connects>
 <technologies>
 <technology name=""/>

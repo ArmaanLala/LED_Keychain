@@ -9589,6 +9589,12 @@
 <circle x="-16.51" y="6.35" radius="1.27" width="0.508" layer="21"/>
 <text x="-10.16" y="10.16" size="3.81" layer="25">&gt;NAME</text>
 </package>
+<package name="KINGBRIGHT-0603">
+<smd name="CATHODE" x="-0.645" y="0" dx="1.05" dy="0.5" layer="1"/>
+<smd name="ANODE" x="0.47" y="0" dx="0.7" dy="0.5" layer="1" rot="R180"/>
+<circle x="-1.5" y="0.5" radius="0.1" width="0.2" layer="21"/>
+<text x="-2" y="1" size="1.27" layer="25">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="KEYSTONE3035">
@@ -9600,6 +9606,28 @@
 <pin name="VCC2" x="5.08" y="10.16" length="short" rot="R270"/>
 <pin name="NEG" x="0" y="-10.16" length="short" rot="R90"/>
 <text x="10.16" y="7.62" size="1.778" layer="95">&gt;NAME</text>
+</symbol>
+<symbol name="LED-PAD">
+<wire x1="1.27" y1="0" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="-1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="-1.27" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="-1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="-2.286" y1="-1.016" x2="-3.175" y2="-1.905" width="0.1524" layer="94"/>
+<wire x1="-1.524" y1="-1.778" x2="-2.413" y2="-2.667" width="0.1524" layer="94"/>
+<text x="3.556" y="-4.572" size="1.778" layer="95" rot="R90">&gt;NAME</text>
+<pin name="CATHODE" x="0" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
+<pin name="ANODE" x="0" y="2.54" visible="pad" length="short" direction="pas" rot="R270"/>
+<polygon width="0.1524" layer="94">
+<vertex x="-3.302" y="-1.524"/>
+<vertex x="-3.556" y="-2.286"/>
+<vertex x="-2.794" y="-2.032"/>
+</polygon>
+<polygon width="0.1524" layer="94">
+<vertex x="-2.54" y="-2.286"/>
+<vertex x="-2.794" y="-3.048"/>
+<vertex x="-2.032" y="-2.794"/>
+</polygon>
 </symbol>
 </symbols>
 <devicesets>
@@ -9620,29 +9648,26 @@
 </device>
 </devices>
 </deviceset>
+<deviceset name="KINGBRIGHT-A1608">
+<gates>
+<gate name="G$1" symbol="LED-PAD" x="7.62" y="-2.54"/>
+</gates>
+<devices>
+<device name="" package="KINGBRIGHT-0603">
+<connects>
+<connect gate="G$1" pin="ANODE" pad="ANODE"/>
+<connect gate="G$1" pin="CATHODE" pad="CATHODE"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="adafruit">
 <packages>
-<package name="RGBLED5050">
-<wire x1="-2.5" y1="2.5" x2="2.5" y2="2.5" width="0.127" layer="21"/>
-<wire x1="2.5" y1="2.5" x2="2.5" y2="-1.5" width="0.127" layer="21"/>
-<wire x1="2.5" y1="-1.5" x2="2.5" y2="-2.5" width="0.127" layer="21"/>
-<wire x1="2.5" y1="-2.5" x2="1.5" y2="-2.5" width="0.127" layer="21"/>
-<wire x1="1.5" y1="-2.5" x2="-2.5" y2="-2.5" width="0.127" layer="21"/>
-<wire x1="-2.5" y1="-2.5" x2="-2.5" y2="2.5" width="0.127" layer="21"/>
-<wire x1="1.5" y1="-2.5" x2="2.5" y2="-1.5" width="0.127" layer="21"/>
-<circle x="2.934" y="-2.688" radius="0.1414" width="0.127" layer="21"/>
-<circle x="0" y="0" radius="2.1" width="0.127" layer="21"/>
-<smd name="1" x="-2" y="1.7" dx="2" dy="1.1" layer="1"/>
-<smd name="2" x="-2" y="0" dx="2" dy="1.1" layer="1"/>
-<smd name="3" x="-2" y="-1.7" dx="2" dy="1.1" layer="1"/>
-<smd name="4" x="2" y="-1.7" dx="2" dy="1.1" layer="1"/>
-<smd name="5" x="2" y="0" dx="2" dy="1.1" layer="1"/>
-<smd name="6" x="2" y="1.7" dx="2" dy="1.1" layer="1"/>
-<text x="-1.7" y="2.9" size="1.27" layer="25" font="vector">&gt;NAME</text>
-<text x="-2" y="-4.1" size="1.27" layer="27" font="vector">&gt;VALUE</text>
-</package>
 <package name="R0402">
 <description>&lt;b&gt;RESISTOR&lt;/b&gt;&lt;p&gt;
 chip</description>
@@ -11065,39 +11090,6 @@ type 0309, grid 2.5 mm</description>
 </package>
 </packages>
 <symbols>
-<symbol name="RGBLED">
-<wire x1="1.27" y1="5.08" x2="-5.08" y2="5.08" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="-5.08" y2="0" width="0.254" layer="94"/>
-<wire x1="1.27" y1="-5.08" x2="-5.08" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="1.27" y1="6.35" x2="1.27" y2="5.08" width="0.254" layer="94"/>
-<wire x1="1.27" y1="5.08" x2="1.27" y2="3.81" width="0.254" layer="94"/>
-<wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="1.27" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="1.27" y1="-6.35" x2="1.27" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="1.27" y1="-5.08" x2="1.27" y2="-3.81" width="0.254" layer="94"/>
-<wire x1="1.27" y1="5.08" x2="-1.27" y2="6.35" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="6.35" x2="-1.27" y2="3.81" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="3.81" x2="1.27" y2="5.08" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="-1.27" y2="1.27" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="1.27" x2="-1.27" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="-1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="1.27" y1="-5.08" x2="-1.27" y2="-3.81" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="-3.81" x2="-1.27" y2="-6.35" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="-6.35" x2="1.27" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="1.27" y1="5.08" x2="5.08" y2="5.08" width="0.254" layer="94"/>
-<wire x1="1.27" y1="-5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="5.08" y1="0" x2="1.27" y2="0" width="0.254" layer="94"/>
-<text x="-3.81" y="8.89" size="1.778" layer="95">&gt;NAME</text>
-<text x="2.54" y="-3.81" size="1.778" layer="94">Red</text>
-<text x="2.54" y="1.27" size="1.778" layer="94">Grn</text>
-<text x="2.54" y="6.35" size="1.778" layer="94">Blue</text>
-<pin name="BLUE_C" x="5.08" y="5.08" visible="off" length="point" rot="R180"/>
-<pin name="GREEN_C" x="5.08" y="0" visible="off" length="point" rot="R180"/>
-<pin name="GREEN_A" x="-5.08" y="0" visible="off" length="point"/>
-<pin name="RED_C" x="5.08" y="-5.08" visible="off" length="point" rot="R180"/>
-<pin name="BLUE_A" x="-5.08" y="5.08" visible="off" length="point"/>
-<pin name="RED_A" x="-5.08" y="-5.08" visible="off" length="point"/>
-</symbol>
 <symbol name="R-US">
 <wire x1="-2.54" y1="0" x2="-2.159" y2="1.016" width="0.2032" layer="94"/>
 <wire x1="-2.159" y1="1.016" x2="-1.524" y2="-1.016" width="0.2032" layer="94"/>
@@ -11115,27 +11107,6 @@ type 0309, grid 2.5 mm</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="RGBLED" prefix="LED">
-<description>For 5050 RGB LEDs, the order of the LEDs may vary from one manufacturer to another!</description>
-<gates>
-<gate name="G$1" symbol="RGBLED" x="0" y="0"/>
-</gates>
-<devices>
-<device name="5050" package="RGBLED5050">
-<connects>
-<connect gate="G$1" pin="BLUE_A" pad="3"/>
-<connect gate="G$1" pin="BLUE_C" pad="4"/>
-<connect gate="G$1" pin="GREEN_A" pad="1"/>
-<connect gate="G$1" pin="GREEN_C" pad="6"/>
-<connect gate="G$1" pin="RED_A" pad="2"/>
-<connect gate="G$1" pin="RED_C" pad="5"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="R-US_" prefix="R" uservalue="yes">
 <description>&lt;B&gt;RESISTOR&lt;/B&gt;, American symbol</description>
 <gates>
@@ -11850,12 +11821,12 @@ type 0309, grid 2.5 mm</description>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="FRAME_A_L" device=""/>
 <part name="U$2" library="Keyboard" deviceset="KEYSWITCH-PLAIN" device="-MX-1U"/>
 <part name="U$1" library="LED_Keychain_lib" deviceset="KEYSTONE3035" device=""/>
-<part name="LED1" library="adafruit" deviceset="RGBLED" device="5050"/>
 <part name="R1" library="adafruit" deviceset="R-US_" device="R0603"/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
-<part name="LED2" library="adafruit" deviceset="RGBLED" device="5050"/>
-<part name="LED3" library="adafruit" deviceset="RGBLED" device="5050"/>
+<part name="LED1" library="LED_Keychain_lib" deviceset="KINGBRIGHT-A1608" device=""/>
+<part name="LED2" library="LED_Keychain_lib" deviceset="KINGBRIGHT-A1608" device=""/>
+<part name="LED3" library="LED_Keychain_lib" deviceset="KINGBRIGHT-A1608" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -11874,9 +11845,6 @@ type 0309, grid 2.5 mm</description>
 <instance part="U$1" gate="G$1" x="203.2" y="86.36" smashed="yes">
 <attribute name="NAME" x="213.36" y="93.98" size="1.778" layer="95"/>
 </instance>
-<instance part="LED1" gate="G$1" x="190.5" y="50.8" smashed="yes">
-<attribute name="NAME" x="186.69" y="59.69" size="1.778" layer="95"/>
-</instance>
 <instance part="R1" gate="G$1" x="246.38" y="96.52" smashed="yes">
 <attribute name="NAME" x="242.57" y="98.0186" size="1.778" layer="95"/>
 <attribute name="VALUE" x="242.57" y="93.218" size="1.778" layer="96"/>
@@ -11887,11 +11855,14 @@ type 0309, grid 2.5 mm</description>
 <instance part="P+1" gate="VCC" x="203.2" y="104.14" smashed="yes">
 <attribute name="VALUE" x="200.66" y="101.6" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="LED2" gate="G$1" x="220.98" y="50.8" smashed="yes">
-<attribute name="NAME" x="217.17" y="59.69" size="1.778" layer="95"/>
+<instance part="LED1" gate="G$1" x="187.96" y="45.72" smashed="yes" rot="R90">
+<attribute name="NAME" x="192.532" y="49.276" size="1.778" layer="95" rot="R180"/>
 </instance>
-<instance part="LED3" gate="G$1" x="251.46" y="50.8" smashed="yes">
-<attribute name="NAME" x="247.65" y="59.69" size="1.778" layer="95"/>
+<instance part="LED2" gate="G$1" x="218.44" y="45.72" smashed="yes" rot="R90">
+<attribute name="NAME" x="223.012" y="49.276" size="1.778" layer="95" rot="R180"/>
+</instance>
+<instance part="LED3" gate="G$1" x="248.92" y="45.72" smashed="yes" rot="R90">
+<attribute name="NAME" x="253.492" y="49.276" size="1.778" layer="95" rot="R180"/>
 </instance>
 </instances>
 <busses>
@@ -11927,19 +11898,19 @@ type 0309, grid 2.5 mm</description>
 <junction x="203.2" y="96.52"/>
 </segment>
 <segment>
-<pinref part="LED1" gate="G$1" pin="RED_A"/>
 <wire x1="185.42" y1="45.72" x2="177.8" y2="45.72" width="0.1524" layer="91"/>
 <label x="177.8" y="43.18" size="1.778" layer="95"/>
+<pinref part="LED1" gate="G$1" pin="ANODE"/>
 </segment>
 <segment>
-<pinref part="LED2" gate="G$1" pin="RED_A"/>
 <wire x1="215.9" y1="45.72" x2="208.28" y2="45.72" width="0.1524" layer="91"/>
 <label x="208.28" y="43.18" size="1.778" layer="95"/>
+<pinref part="LED2" gate="G$1" pin="ANODE"/>
 </segment>
 <segment>
-<pinref part="LED3" gate="G$1" pin="RED_A"/>
 <wire x1="246.38" y1="45.72" x2="238.76" y2="45.72" width="0.1524" layer="91"/>
 <label x="238.76" y="43.18" size="1.778" layer="95"/>
+<pinref part="LED3" gate="G$1" pin="ANODE"/>
 </segment>
 </net>
 <net name="LEDOUT" class="0">
@@ -11949,19 +11920,19 @@ type 0309, grid 2.5 mm</description>
 <label x="236.22" y="93.98" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="LED1" gate="G$1" pin="RED_C"/>
-<wire x1="195.58" y1="45.72" x2="203.2" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="193.04" y1="45.72" x2="203.2" y2="45.72" width="0.1524" layer="91"/>
 <label x="195.58" y="43.18" size="1.778" layer="95"/>
+<pinref part="LED1" gate="G$1" pin="CATHODE"/>
 </segment>
 <segment>
-<pinref part="LED2" gate="G$1" pin="RED_C"/>
-<wire x1="226.06" y1="45.72" x2="233.68" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="223.52" y1="45.72" x2="233.68" y2="45.72" width="0.1524" layer="91"/>
 <label x="226.06" y="43.18" size="1.778" layer="95"/>
+<pinref part="LED2" gate="G$1" pin="CATHODE"/>
 </segment>
 <segment>
-<pinref part="LED3" gate="G$1" pin="RED_C"/>
-<wire x1="256.54" y1="45.72" x2="264.16" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="254" y1="45.72" x2="264.16" y2="45.72" width="0.1524" layer="91"/>
 <label x="256.54" y="43.18" size="1.778" layer="95"/>
+<pinref part="LED3" gate="G$1" pin="CATHODE"/>
 </segment>
 </net>
 </nets>
