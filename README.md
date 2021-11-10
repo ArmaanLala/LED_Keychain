@@ -27,11 +27,6 @@ Board view
 ![Board View rev1](https://github.com/ArmaanLala/LED_Keychain/blob/master/Images/LED_Keychain.png?raw=true)
 
 
-##
-LED Componets
-AA1608SURSK
-AA1608SYSK
-AA1608CGSK
 
 
 ## Credits
